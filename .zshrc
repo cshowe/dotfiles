@@ -52,3 +52,12 @@ source $ZSH/oh-my-zsh.sh
 bindkey -v
 export RPROMPT='%(?..[%?])'
 setopt nobeep
+
+# Don't tab complete remote branches in git
+zstyle :completion::complete:git-checkout:argument-rest:headrefs command "git for-each-ref --format='%(refname)' refs/heads 2>/dev/null"
+
+# Find the newest SSH agent socket for this user and attach
+export SSH_AUTH_SOCK=$(find /tmp/ssh-* -user `whoami` -name agent\* -printf '%T@ %p\n' 2>/dev/null | sort -k 1nr | cut -d' ' -f2 | head -n 1)
+
+export ZSH_THEME_VIRTUALENV_PREFIX='['
+export ZSH_THEME_VIRTUALENV_SUFFIX=']'
