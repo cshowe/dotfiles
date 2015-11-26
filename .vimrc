@@ -1,3 +1,4 @@
+set shell=/bin/bash
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -7,19 +8,22 @@ set t_Co=256
 set t_vb=
 set vb
 
-Bundle 'gmarik/vundle'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'bling/vim-airline'
-Bundle 'kien/ctrlp.vim'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'tpope/vim-fugitive'
-Bundle 'moll/vim-bbye'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'bling/vim-airline'
+Plugin 'kien/ctrlp.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tpope/vim-fugitive'
+Plugin 'moll/vim-bbye'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'kshenoy/vim-signature'
+Plugin 'rust-lang/rust.vim'
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts=1
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\vbower_components|\.git|node_modules|vendor\/|venv$',
+  \ 'dir':  '\vbower_components|\.git|node_modules|vendor\/|venv|_generated_media$',
   \ 'file': '\v\.(pyc)$',
   \ }
 let g:ctrlp_root_markers = ['requirements.txt']
