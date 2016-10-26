@@ -5,9 +5,10 @@ function current_branch {
 
 bindkey -v
 setopt nobeep
-setopt PROMPT_SUBST
+setopt promptsubst
+setopt promptpercent
 ulimit -n 2048
 precmd () {print -Pn "\e]0;%n@%m: %~\a"}
-export PROMPT='%n@%m %3c %# '
-export RPROMPT='%{$fg[red]%}%(?..%?) $(current_branch)%{$default_color %b%}'
+export PROMPT='%B%K{black}%F{green}%n@%F{blue}%m %3c %#%f%b '
+export RPROMPT='%B%K{black}%F{red}%(?..%? )%F{green}$(current_branch)%f%b'
 source ~/code/nvm/nvm.sh
