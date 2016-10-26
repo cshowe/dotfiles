@@ -4,7 +4,8 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
-set t_Co=256
+syntax on
+set t_Co=16
 set t_vb=
 set vb
 
@@ -16,11 +17,9 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
 Plugin 'moll/vim-bbye'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'kshenoy/vim-signature'
 Plugin 'rust-lang/rust.vim'
 
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts=1
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\vbower_components|\.git|node_modules|vendor\/|venv|_generated_media$',
@@ -29,7 +28,6 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_root_markers = ['requirements.txt']
 
 filetype plugin indent on
-syntax on
 set completeopt-=preview
 set expandtab
 set number
